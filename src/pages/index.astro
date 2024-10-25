@@ -1,0 +1,245 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Particles from "../components/Particles.astro";
+import ChevronRight from "../components/icons/ChevronRight.astro";
+---
+
+<Layout title="Rethink Software Lab">
+    <main class="main">
+        <section class="section">
+            <div class="background">
+                <div class="gradient"></div>
+            </div>
+            <Particles />
+            <div class="container-header">
+                <p class="shimerText">
+                    Rethink Software Lab
+                </p>
+                <h1 class="heading_1">
+                    La nueva forma de desarrollar software en cuba.
+                </h1>
+                <p class="subtitle">
+                    Repensar tu negocio hacia la eficiencia, flexibilidad y
+                    escalabilidad de las nuevas tecnologías.
+                </p>
+                <div class="container-buttons">
+                    <a
+                        target="_blank"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=rethinksoftwarelab@gmail.com"
+                        class="btn-primary"
+                    >
+                        Contáctanos
+                        <ChevronRight />
+                    </a>
+                    <!-- <a
+                        class="z-[100] w-full md:w-fit text-base h-12 pl-5 pr-2 gap-0 font-semibold text-slate-11 hover:bg-zinc-800 hover:text-slate-12 le:ring-4 inline-flex items-center justify-center select-none rounded-full transition ease-in-out duration-200"
+                        href="#"
+                    >
+                        Leer más
+                        <ChevronRight stroke="#70757E" />
+                    </a> -->
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    .main {
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section {
+        position: relative;
+        min-height: 80vh;
+    }
+
+    .background {
+        width: 100%;
+        z-index: -10;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .gradient {
+        background-image: radial-gradient(
+            ellipse 80% 80% at 50% 120%,
+            rgba(120, 119, 198, 0.3),
+            rgba(255, 255, 255, 0)
+        );
+        background-color: rgb(10 10 10/ 1);
+        width: 100vw;
+        height: 100vh;
+        z-index: -2;
+        position: absolute;
+        top: 0px;
+    }
+
+    @keyframes fade-in-down {
+        from {
+            transform: translateY(-1rem);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .animate-fade-in-down {
+        animation: fade-in-down 2s ease forwards;
+        opacity: 1;
+    }
+
+    .delay-200 {
+        opacity: 0;
+        animation-delay: 200ms;
+    }
+
+    .delay-400 {
+        opacity: 0;
+        animation-delay: 400ms;
+    }
+
+    .delay-600 {
+        opacity: 0;
+        animation-delay: 600ms;
+    }
+
+    .container-header {
+        margin: 8rem auto;
+        max-width: 1280px;
+        padding: 0 1.5rem;
+        text-align: center;
+    }
+
+   
+
+    @keyframes shimmer {
+        0%, 90%, 100% {
+            background-position: calc(-100% - 100px) 0;
+        }
+        30%, 60% {
+            background-position: calc(100% + 100px) 0;
+        }
+    }
+
+    .shimerText {
+        margin: 0 auto 1rem auto;
+        font-size: 1rem;
+        font-weight: 600;
+        max-width: 28rem;
+        color: rgb(163 163 163 / 0.5);
+        animation: shimmer 8s infinite;
+        background-clip: text;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 100px 100%;
+        transition: background-position 1s cubic-bezier(.6,.6,0,1) infinite;
+        background-image: linear-gradient(to right, #171717, rgb(255 255 255 / 0.8),#171717 );
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .heading_1 {
+        animation: fade-in-down 2s ease forwards;
+        transition-delay: 200ms;
+        background-image: linear-gradient(to bottom right, #fff 30%,  rgb(255 255 255 / 0.4));
+        background-clip: text;
+        padding: 1.5rem 0;
+        font-size: 3rem;
+        line-height: 1;
+        font-weight: 500;
+        letter-spacing: -0.05em;
+        color: transparent;
+        text-wrap: balance;
+        margin: 0;
+    }
+
+    .subtitle {
+        animation: fade-in-down 2s ease forwards;
+        opacity: 0;
+        animation-delay: 400ms;
+        margin-top: 0;
+        margin-bottom: 3rem;
+        font-size: 1.125rem; 
+        line-height: 1.75rem; 
+        letter-spacing: -0.025em;
+        color: #9ca3af;
+        text-wrap: balance;
+    }
+
+    .container-buttons {
+        animation: fade-in-down 2s ease forwards;
+        opacity: 0;
+        animation-delay: 600ms;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        height: 3rem;
+        padding: 0 0.5rem 0 1.25rem;
+        font-weight: 600;
+        background: white;
+        color: black;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        border-radius: 9999px;
+        transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+        text-decoration: none;
+    }
+
+    .btn-primary:hover {
+        filter: brightness(.75);
+    }
+
+    .btn-primary:focus-visible {
+        outline: none;
+        background-color: rgb(255, 255, 255, .9);
+        box-shadow: 0 0 rgb(255, 255, 255, .3);
+    }
+
+
+     /* LG */
+    @media (min-width: 1024px) {
+        .heading_1 {
+            font-size: 6rem
+        }
+    }   
+
+    /* MD */
+    @media (min-width: 768px) { 
+        .container-header {
+            padding: 0 2rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem 
+        }
+
+        .container-buttons {
+            flex-direction: row;
+        }
+
+        .btn-primary {
+            width: fit-content;
+        }
+      
+    }
+
+
+
+</style>
